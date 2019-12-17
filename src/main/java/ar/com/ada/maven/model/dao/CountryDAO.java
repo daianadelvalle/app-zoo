@@ -15,6 +15,12 @@ public class CountryDAO implements DAO<CountryDTO> {
 
     private ContinentDAO continentDAO = new ContinentDAO(false);
 
+    public CountryDAO() {}
+
+    public CountryDAO (Boolean willCloseConnection) {
+        this.willCloseConnection = willCloseConnection;
+    }
+
     @Override
     public ArrayList<CountryDTO> findAll() {
         String sql = "SELECT * FROM Country";
@@ -25,7 +31,7 @@ public class CountryDAO implements DAO<CountryDTO> {
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
                 ContinentDDTO continent = continentDAO.findById(rs.getInt("id_Continent"));
-                CountryDTO country = new CountryDTO(rs.getInt("id"), rs.getString("name"), continent);
+                CountryDTO country = new CountryDTO(rs.getInt("id"), rs.getString("name"), rs.getInt("iso_cod"), continent);
                 countries.add(country);
             }
             connection.close();
@@ -46,7 +52,7 @@ public class CountryDAO implements DAO<CountryDTO> {
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
                 ContinentDDTO continent = continentDAO.findById(rs.getInt("id_Continent"));
-                country = new CountryDTO(rs.getInt("id"), rs.getString("name"), continent);
+                country = new CountryDTO(rs.getInt("id"), rs.getString("name"), rs.getInt("iso_cod"), continent);
             }
             if (willCloseConnection)
             connection.close();
@@ -96,7 +102,7 @@ public class CountryDAO implements DAO<CountryDTO> {
                 hasUpdate = preparedStatement.executeUpdate();
             connection.close();
         } catch (Exception e) {
-            System.out.println("CONNECTION ERROR ON COUNTRY: " + e.getMessage());
+            System.out.println("CONNECTION ERROR ON COUNTRY update: " + e.getMessage());
 
         }
         return hasUpdate == 1;
@@ -104,7 +110,17 @@ public class CountryDAO implements DAO<CountryDTO> {
 
     @Override
     public Boolean delete(Integer id) {
+        String sql = "DELETE FROM Country WHERE Id = ?";
         int hasDelete = 0;
+
+        try {
+            Connection connection = DBConnection.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            hasDelete = preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("CONNECTION ERROR ON COUNTRY delete: " + e.getMessage());
+        }
         return hasDelete ==1;
     }
 }

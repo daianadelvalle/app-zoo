@@ -37,6 +37,6 @@ public class ContinentDDTO {
 
     @Override
     public String toString() {
-        return id + name;
+        return "ID: " + id + "  NOMBRE: " + name;
     }
 }

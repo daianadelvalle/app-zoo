@@ -47,6 +47,13 @@ public class CountryDTO {
         this.continent = continent;
     }
 
+    public CountryDTO(int id, String name, Integer isoCode, ContinentDDTO continent) {
+        this.id = id;
+        this.name = name;
+        this.isoCode = isoCode;
+        this.continent = continent;
+    }
+
     //getter and setter
     public int getId() {
         return id;
@@ -89,6 +96,6 @@ public class CountryDTO {
 
     @Override
     public String toString() {
-        return id + name + continent;
+        return "ID: " + id + "  NOMBRE: " + name + "  ISO-CODE: " + isoCode + "\nCONTINENTE AL QUE PERTENECE: " + continent + "\n";
     }
 }
