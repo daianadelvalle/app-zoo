@@ -4,8 +4,6 @@ import ar.com.ada.maven.model.dao.CityDAO;
 import ar.com.ada.maven.model.dao.ContinentDAO;
 import ar.com.ada.maven.model.dao.CountryDAO;
 import ar.com.ada.maven.model.dto.CityDTO;
-import ar.com.ada.maven.model.dto.ContinentDDTO;
-import ar.com.ada.maven.model.dto.CountryDTO;
 
 import java.util.List;
 

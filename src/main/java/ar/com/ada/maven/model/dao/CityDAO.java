@@ -63,17 +63,58 @@ public class CityDAO implements DAO<CityDTO> {
     }
 
     @Override
-    public Boolean save(CityDTO cityDTO) {
-        return null;
+    public Boolean save(CityDTO city) {
+        String sql = "INSERT INTO City (name, Country_id) VALUES (?,?)";
+        int affectedRows = 0;
+        try {
+            Connection connection = DBConnection.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, city.getName());
+            preparedStatement.setInt(2, city.getCountryID().getId());
+            affectedRows = preparedStatement.executeUpdate();
+            connection.close();
+        } catch (Exception e) {
+            System.out.println("CONNECTION ERROR CITY save: " + e.getMessage());
+        }
+        return affectedRows == 1;
     }
 
     @Override
-    public Boolean update(CityDTO cityDTO, Integer id) {
-        return null;
+    public Boolean update(CityDTO city, Integer id) {
+        String sql = "UPDATE City SET name = ?, Country_id = ? WHERE Id = ?";
+        int hasUpdate = 0;
+
+        CityDTO cityDB = findById(id);
+
+        try {
+            Connection connection = DBConnection.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, city.getName());
+            preparedStatement.setInt(2, city.getCountryID().getId());
+            preparedStatement.setInt(3, id);
+
+            if (!(city.getName().equals(cityDB.getName()) && city.getCountryID().equals(cityDB.getCountryID())));
+               hasUpdate = preparedStatement.executeUpdate();
+            connection.close();
+        } catch (Exception e) {
+            System.out.println("CONNECTION ERROR CITY update: " + e.getMessage());
+        }
+        return hasUpdate == 1;
     }
 
     @Override
     public Boolean delete(Integer id) {
-        return null;
+        String sql = "DELETE FROM City WHERE Id = ?";
+        int hasDelete = 0;
+
+        try {
+            Connection connection = DBConnection.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            hasDelete = preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("CONNECTION ERROR CITY delete: " + e.getMessage());
+        }
+        return hasDelete == 1;
     }
 }

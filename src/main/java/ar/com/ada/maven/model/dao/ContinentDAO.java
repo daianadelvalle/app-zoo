@@ -1,14 +1,13 @@
 package ar.com.ada.maven.model.dao;
 
 import ar.com.ada.maven.model.DBConnection;
-import ar.com.ada.maven.model.dto.ContinentDDTO;
+import ar.com.ada.maven.model.dto.ContinentDTO;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class ContinentDAO implements DAO<ContinentDDTO> {
+public class ContinentDAO implements DAO<ContinentDTO> {
 
     private Boolean willCloseConnection = true;
 
@@ -20,16 +19,16 @@ public class ContinentDAO implements DAO<ContinentDDTO> {
     }
 
     @Override
-    public List<ContinentDDTO> findAll() {
+    public List<ContinentDTO> findAll() {
         String sql = "SELECT * FROM Continent";
-        List<ContinentDDTO> continents = new ArrayList<>();
+        List<ContinentDTO> continents = new ArrayList<>();
 
         try {
             Connection connection = DBConnection.getConnection();
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
-                ContinentDDTO continent = new ContinentDDTO(rs.getInt("id"), rs.getString("name"));
+                ContinentDTO continent = new ContinentDTO(rs.getInt("id"), rs.getString("name"));
                 continents.add(continent);
             }
             connection.close();
@@ -41,16 +40,16 @@ public class ContinentDAO implements DAO<ContinentDDTO> {
     }
 
     @Override
-    public ContinentDDTO findById(Integer id) {
+    public ContinentDTO findById(Integer id) {
         String sql = "SELECT * FROM Continent WHERE id = ?";
-        ContinentDDTO continent = null;
+        ContinentDTO continent = null;
         try {
             Connection connection = DBConnection.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next())
-                continent = new ContinentDDTO(rs.getInt("id"), rs.getString("name"));
+                continent = new ContinentDTO(rs.getInt("id"), rs.getString("name"));
             if (willCloseConnection)
             connection.close();
         } catch (SQLException | ClassNotFoundException | IllegalAccessException | InstantiationException ex) {
@@ -61,7 +60,7 @@ public class ContinentDAO implements DAO<ContinentDDTO> {
     }
 
     @Override
-    public Boolean save(ContinentDDTO continent) {
+    public Boolean save(ContinentDTO continent) {
         String sql = "INSERT INTO Continent (name) values (?)";
         int affectatedRows = 0;
         try {
@@ -77,12 +76,12 @@ public class ContinentDAO implements DAO<ContinentDDTO> {
     }
 
     @Override
-    public Boolean update(ContinentDDTO continent, Integer id) {
+    public Boolean update(ContinentDTO continent, Integer id) {
         String sql = "UPDATE Continent SET name = ? WHERE Id = ?";
         int hasUpdate = 0;
 
         //para comparar el objeto que quiero actualizar con la base de datos.
-        ContinentDDTO continentDB = findById(id);
+        ContinentDTO continentDB = findById(id);
 
         try {
             Connection connection = DBConnection.getConnection();

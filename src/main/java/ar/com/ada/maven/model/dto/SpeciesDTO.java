@@ -5,8 +5,8 @@ import java.util.Objects;
 public class SpeciesDTO {
     //attr
     private int id;
-    private String nameV;
-    private String nameC;
+    private String vulgarName;
+    private String scientificName;
     private Boolean ext;
     private FamiliyDTO familyID;
 
@@ -15,10 +15,10 @@ public class SpeciesDTO {
     public SpeciesDTO() {
     }
 
-    public SpeciesDTO(int id, String nameV, String nameC, Boolean ext, FamiliyDTO familyID) {
+    public SpeciesDTO(int id, String vulgarName, String scientificName, Boolean ext, FamiliyDTO familyID) {
         this.id = id;
-        this.nameV = nameV;
-        this.nameC = nameC;
+        this.vulgarName = vulgarName;
+        this.scientificName = scientificName;
         this.ext = ext;
         this.familyID = familyID;
     }
@@ -29,12 +29,12 @@ public class SpeciesDTO {
         return id;
     }
 
-    public String getNameV() {
-        return nameV;
+    public String getVulgarName() {
+        return vulgarName;
     }
 
-    public String getNameC() {
-        return nameC;
+    public String getScientificName() {
+        return scientificName;
     }
 
     public Boolean getExt() {
@@ -49,12 +49,12 @@ public class SpeciesDTO {
         this.id = id;
     }
 
-    public void setNameV(String nameV) {
-        this.nameV = nameV;
+    public void setVulgarName(String vulgarName) {
+        this.vulgarName = vulgarName;
     }
 
-    public void setNameC(String nameC) {
-        this.nameC = nameC;
+    public void setScientificName(String scientificName) {
+        this.scientificName = scientificName;
     }
 
     public void setExt(Boolean ext) {
@@ -71,20 +71,20 @@ public class SpeciesDTO {
         if (o == null || getClass() != o.getClass()) return false;
         SpeciesDTO that = (SpeciesDTO) o;
         return id == that.id &&
-                Objects.equals(nameV, that.nameV) &&
-                Objects.equals(nameC, that.nameC) &&
+                Objects.equals(vulgarName, that.vulgarName) &&
+                Objects.equals(scientificName, that.scientificName) &&
                 Objects.equals(ext, that.ext) &&
                 Objects.equals(familyID, that.familyID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nameV, nameC, ext, familyID);
+        return Objects.hash(id, vulgarName, scientificName, ext, familyID);
     }
 
     @Override
     public String toString() {
-        return "SpeciesDTO{" + "id=" + id + ", nameV='" + nameV + '\'' + ", nameC='" + nameC + '\'' + ", ext=" + ext + ", familyID=" + familyID + '}';
+        return "SpeciesDTO{" + "id=" + id + ", nameV='" + vulgarName + '\'' + ", nameC='" + scientificName + '\'' + ", ext=" + ext + ", familyID=" + familyID + '}';
     }
 
 }

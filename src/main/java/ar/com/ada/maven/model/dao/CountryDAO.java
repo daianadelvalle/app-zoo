@@ -1,12 +1,11 @@
 package ar.com.ada.maven.model.dao;
 
 import ar.com.ada.maven.model.DBConnection;
-import ar.com.ada.maven.model.dto.ContinentDDTO;
+import ar.com.ada.maven.model.dto.ContinentDTO;
 import ar.com.ada.maven.model.dto.CountryDTO;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Collection;
 
 
 public class CountryDAO implements DAO<CountryDTO> {
@@ -30,7 +29,7 @@ public class CountryDAO implements DAO<CountryDTO> {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
-                ContinentDDTO continent = continentDAO.findById(rs.getInt("id_Continent"));
+                ContinentDTO continent = continentDAO.findById(rs.getInt("id_Continent"));
                 CountryDTO country = new CountryDTO(rs.getInt("id"), rs.getString("name"), rs.getInt("iso_cod"), continent);
                 countries.add(country);
             }
@@ -51,7 +50,7 @@ public class CountryDAO implements DAO<CountryDTO> {
             preparedStatement.setInt(1, id);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
-                ContinentDDTO continent = continentDAO.findById(rs.getInt("id_Continent"));
+                ContinentDTO continent = continentDAO.findById(rs.getInt("id_Continent"));
                 country = new CountryDTO(rs.getInt("id"), rs.getString("name"), rs.getInt("iso_cod"), continent);
             }
             if (willCloseConnection)

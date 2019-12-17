@@ -1,6 +1,6 @@
 package ar.com.ada.maven.model.dto;
 
-public class ContinentDDTO {
+public class ContinentDTO {
 
     //attr
     private int id;
@@ -8,13 +8,13 @@ public class ContinentDDTO {
 
     //constructors
 
-    public ContinentDDTO() {}
+    public ContinentDTO() {}
 
-    public ContinentDDTO(String name) {
+    public ContinentDTO(String name) {
         this.name = name;
     }
 
-    public ContinentDDTO(int id, String name) {
+    public ContinentDTO(int id, String name) {
     this.id = id;
     this.name = name;
     }

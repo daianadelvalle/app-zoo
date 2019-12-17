@@ -71,7 +71,7 @@ public class ZooDTO {
         if (o == null || getClass() != o.getClass()) return false;
         ZooDTO zooDTO = (ZooDTO) o;
         return id == zooDTO.id &&
-                number == zooDTO.number &&
+                Objects.equals(number, zooDTO.number) &&
                 Objects.equals(size, zooDTO.size) &&
                 Objects.equals(budget, zooDTO.budget) &&
                 Objects.equals(city, zooDTO.city);

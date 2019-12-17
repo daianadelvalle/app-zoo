@@ -8,7 +8,7 @@ public class CountryDTO {
     private int id;
     private String name;
     private Integer isoCode;
-    private ContinentDDTO continent;
+    private ContinentDTO continent;
 
     //constructors
     public CountryDTO() {}
@@ -21,7 +21,7 @@ public class CountryDTO {
         this.name = name;
     }
 
-    public CountryDTO(ContinentDDTO continentID) {
+    public CountryDTO(ContinentDTO continentID) {
         this.continent = continent;
     }
 
@@ -30,24 +30,24 @@ public class CountryDTO {
         this.name = name;
     }
 
-    public CountryDTO(String name, ContinentDDTO continent) {
+    public CountryDTO(String name, ContinentDTO continent) {
         this.name = name;
         this.continent = continent;
     }
 
-    public CountryDTO(int id, String name, ContinentDDTO continent) {
+    public CountryDTO(int id, String name, ContinentDTO continent) {
         this.id = id;
         this.name = name;
         this.continent = continent;
     }
 
-    public CountryDTO(String name, Integer isoCode, ContinentDDTO continent) {
+    public CountryDTO(String name, Integer isoCode, ContinentDTO continent) {
         this.name = name;
         this.isoCode = isoCode;
         this.continent = continent;
     }
 
-    public CountryDTO(int id, String name, Integer isoCode, ContinentDDTO continent) {
+    public CountryDTO(int id, String name, Integer isoCode, ContinentDTO continent) {
         this.id = id;
         this.name = name;
         this.isoCode = isoCode;
@@ -61,7 +61,7 @@ public class CountryDTO {
     public String getName() {
         return name;
     }
-    public ContinentDDTO getContinent() {
+    public ContinentDTO getContinent() {
         return continent;
     }
     public Integer getIsoCode() { return isoCode; }
@@ -72,7 +72,7 @@ public class CountryDTO {
     public void setName(String name) {
         this.name = name;
     }
-    public  void setContinent(ContinentDDTO continent) {
+    public  void setContinent(ContinentDTO continent) {
         this.continent = continent;
     }
     public void setIsoCode(Integer isoCod) { this.isoCode = isoCode; }
