@@ -71,17 +71,62 @@ public class SpeciesDAO implements DAO<SpeciesDTO> {
     }
 
     @Override
-    public Boolean save(SpeciesDTO speciesDTO) {
-        return null;
+    public Boolean save(SpeciesDTO species) {
+        String sql = "INSERT INTO Species (name_v, name_c, ext, family_id) VALUES (?,?,?,?)";
+        int affectedRows = 0;
+
+        try {
+            Connection connection = DBConnection.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, species.getVulgarName());
+            preparedStatement.setString(2, species.getScientificName());
+            preparedStatement.setBoolean(3, species.getExt());
+            preparedStatement.setInt(4, species.getFamilyID().getId());
+            affectedRows = preparedStatement.executeUpdate();
+            connection.close();
+        } catch (Exception e) {
+            System.out.println("CONNECTION ERROR SPECIES save : " + e.getMessage());
+        }
+        return affectedRows == 1;
     }
 
     @Override
-    public Boolean update(SpeciesDTO speciesDTO, Integer id) {
-        return null;
+    public Boolean update(SpeciesDTO species, Integer id) {
+        String sql = "UPDATE Species SET name_v = ?, name_c = ?, ext = ?, family_id = ? WHERE Id = ?";
+        int hasUpdate = 0;
+
+        SpeciesDTO speciesDB = findById(id);
+
+        try {
+            Connection connection = DBConnection.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, species.getVulgarName());
+            preparedStatement.setString(2, species.getScientificName());
+            preparedStatement.setBoolean(3, speciesDB.getExt());
+            preparedStatement.setInt(4, species.getFamilyID().getId());
+
+            if (!(species.getVulgarName().equals(speciesDB.getVulgarName()) &&
+                    species.getScientificName().equals(speciesDB.getScientificName()) &&
+                    species.getExt().equals(speciesDB.getExt()) && species.getFamilyID().equals(speciesDB.getFamilyID())));
+            hasUpdate = preparedStatement.executeUpdate();
+        } catch (Exception e ) {
+            System.out.println("CONNECTION ERROR SPECIES update : " + e.getMessage());
+        }
+        return hasUpdate == 1;
     }
 
     @Override
     public Boolean delete(Integer id) {
-        return null;
+        String sql = "DELETE FROM Species WHERE Id = ?";
+        int hasDelete = 0;
+        try {
+            Connection connection = DBConnection.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            hasDelete = preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("CONNECTION ERROR SPECIES delete : " + e.getMessage());
+        }
+        return hasDelete == 1;
     }
 }

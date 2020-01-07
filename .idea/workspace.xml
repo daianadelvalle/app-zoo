@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4f5b2557-028a-4b27-8ce9-4b563982a8d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/CityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/CityDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/ContinentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/ContinentDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/CountryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/CountryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dto/ContinentDDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dto/ContinentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dto/CountryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dto/CountryDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dto/SpeciesDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dto/SpeciesDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dto/ZooDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dto/ZooDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/SpeciesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/SpeciesDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/ZooDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/ZooDAO.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +88,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

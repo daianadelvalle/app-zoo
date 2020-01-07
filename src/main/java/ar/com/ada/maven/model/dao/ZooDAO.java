@@ -16,6 +16,13 @@ public class ZooDAO implements DAO<ZooDTO> {
     private Boolean willCloseConnection = true;
     private CityDAO cityDAO = new CityDAO(false);
 
+    public ZooDAO() {
+    }
+
+    public ZooDAO(Boolean willCloseConnection) {
+        this.willCloseConnection = willCloseConnection;
+    }
+
     @Override
     public ArrayList<ZooDTO> findAll() {
         String sql = "SELECT * FROM Zoo";
