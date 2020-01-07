@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f5b2557-028a-4b27-8ce9-4b563982a8d7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/SpeciesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/SpeciesDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/ZooDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/ZooDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/view/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/view/MainView.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
