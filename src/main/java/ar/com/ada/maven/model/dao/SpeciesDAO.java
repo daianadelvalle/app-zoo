@@ -3,7 +3,6 @@ package ar.com.ada.maven.model.dao;
 import ar.com.ada.maven.model.DBConnection;
 import ar.com.ada.maven.model.dto.FamiliyDTO;
 import ar.com.ada.maven.model.dto.SpeciesDTO;
-import sun.security.pkcs11.Secmod;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

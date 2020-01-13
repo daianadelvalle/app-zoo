@@ -2,13 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f5b2557-028a-4b27-8ce9-4b563982a8d7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/controller/ContinentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/controller/ContinentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/ContinentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/ContinentDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/SpeciesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/model/dao/SpeciesDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/view/ContinentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/view/ContinentView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/view/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/ada/maven/view/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ar/com/ada/maven/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ar/com/ada/maven/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ar/com/ada/maven/model/dao/CityDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ar/com/ada/maven/model/dao/CityDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ar/com/ada/maven/model/dao/ContinentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ar/com/ada/maven/model/dao/ContinentDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ar/com/ada/maven/model/dao/CountryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ar/com/ada/maven/model/dao/CountryDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ar/com/ada/maven/model/dto/ContinentDDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ar/com/ada/maven/model/dto/CountryDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ar/com/ada/maven/model/dto/CountryDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ar/com/ada/maven/model/dto/SpeciesDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ar/com/ada/maven/model/dto/SpeciesDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ar/com/ada/maven/model/dto/ZooDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ar/com/ada/maven/model/dto/ZooDTO.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="app-zoo" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -95,6 +113,15 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ar/com/ada/maven/controller/MainController.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="country.getIsoCode()" />

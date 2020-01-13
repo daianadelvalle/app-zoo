@@ -18,6 +18,27 @@ public class ContinentDAO implements DAO<ContinentDTO> {
         this.willCloseConnection = willCloseConnection;
     }
 
+    public ContinentDTO findByName(String name) {
+        String sql = "SELECT * FROM Continent WHERE name = ?";
+        ContinentDTO continent = null;
+        try {
+            Connection connection = DBConnection.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, name);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next())
+                continent = new ContinentDTO(rs.getInt("id"), rs.getString("name"));
+            if (willCloseConnection)
+                connection.close();
+        } catch (SQLException | ClassNotFoundException | IllegalAccessException | InstantiationException ex) {
+            ex.printStackTrace();
+            System.out.println("CONNECTION ERROR: " + ex.getMessage());
+        }
+        return continent;
+    }
+
+    public 
+
     @Override
     public List<ContinentDTO> findAll() {
         String sql = "SELECT * FROM Continent";

@@ -1,5 +1,6 @@
 package ar.com.ada.maven;
 
+import ar.com.ada.maven.controller.MainController;
 import ar.com.ada.maven.model.dao.CityDAO;
 import ar.com.ada.maven.model.dao.ContinentDAO;
 import ar.com.ada.maven.model.dao.CountryDAO;
@@ -10,9 +11,11 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
 
-        ContinentDAO dao = new ContinentDAO();
-        CountryDAO countryDAO = new CountryDAO();
-        CityDAO cityDAO = new CityDAO();
+        MainController.run();
+
+//        ContinentDAO dao = new ContinentDAO();
+//        CountryDAO countryDAO = new CountryDAO();
+//        CityDAO cityDAO = new CityDAO();
 
         //FIND BY ID
 //        ContinentDDTO continent = dao.findById(1);
@@ -59,8 +62,8 @@ public class App {
 //        List<CountryDTO> countryList = countryDAO.findAll();
 //        countryList.forEach(country -> System.out.println(country.toString()));
 
-        List<CityDTO> cities = cityDAO.findAll();
-        cities.forEach(cityDTO -> System.out.println(cityDTO.toString()));
+       // List<CityDTO> cities = cityDAO.findAll();
+        //cities.forEach(cityDTO -> System.out.println(cityDTO.toString()));
 
 
         // UPDATE
